@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <style>
+        .share-tech-mono {
+            font-family: 'Share Tech Mono', monospace;
+        }
+    </style>
+    <title>Stop Watch</title>
+</head>
+
+<body>
+    <div class="flex justify-center text-center share-tech-mono">
+        <div class="h-cover w-[80%] bg-[#24475B] p-5 mt-32 ">
+            <div class="mt-10">
+                <h2 class="text-white font-bold text-3xl mb-8">Stop Watch</h2>
+                <div id="time" class="p-22 flex flex-row  mt-4 justify-center text-white font-bold">
+                    <div class="bg-[#1BAA76] w-32 h-cover border border-1 border-[#1BAA76] rounded-md mr-4 p-3"><span
+                            id="days" class="text-7xl">00</span>
+                        <h3 class="font-sm text-orange-400">Days</h3>
+                    </div><span class="mt-10 mr-3 text-3xl">:</span>
+                    <div class="bg-[#1BAA76] w-32 h-cover border border-1 border-[#1BAA76] rounded-md mr-4 p-3"><span
+                            id="hours" class="text-7xl">00</span>
+                        <h3 class="font-sm text-orange-400">Hours</h3>
+                    </div><span class="mt-10 mr-3 text-3xl">:</span>
+                    <div class="bg-[#1BAA76] w-32 h-cover border border-1 border-[#1BAA76] rounded-sm mr-4 p-3"><span
+                            id="minutes" class="text-7xl">00</span>
+                        <h3 class="font-sm text-orange-400">Minutes</h3>
+                    </div><span class="mt-10 mr-3 text-3xl">:</span>
+                    <div class="bg-[#1BAA76] w-32 h-cover border border-1 border-[#1BAA76] rounded-sm mr-4 p-3"><span
+                            id="seconds" class="text-7xl">00</span>
+                        <h3 class="font-sm text-orange-400">Seconds</h3>
+                    </div>
+                </div>
+                <div id="countdownDisplay" class="justify-center flex flex-col p-6 text-blue">
+                    <div class="justify-center flex flex-row mx-auto p-6 text-blue">
+                        <div class="justify-between flex items-center space-x-0 w-[30%]">
+                            <input type="number" id="duration"
+                                class="border border-gray-300 rounded-sm w-full py-3 shadow-sm mt-1 block w-full focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-50"
+                                placeholder="Duration in minutes" style="flex-grow: 1;" />
+                            <button onclick="durationCountdown()"
+                                class="bg-[#1BAA76] hover:bg-blue-700 text-white text-[10px] font-bold py-2.5 px-3 rounded-sm mt-1 ">
+                                Duration Countdown
+                            </button>
+                        </div>
+                        <div class="justify-between flex items-center space-x-0 w-[30%] ml-5">
+                            <input type="datetime-local" id="endTime"
+                                class="border border-gray-300 rounded-sm w-full py-3 shadow-sm mt-1 block w-full focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-50"
+                                placeholder="Duration" style="flex-grow: 1;" />
+                            <button onclick="specificCountDown()"
+                                class="bg-[#1BAA76] hover:bg-blue-700 text-white font-semibold text-[10px] py-2.5 px-3 rounded-sm mt-1 ">
+                                Time Countdown
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-1 ml-3 text-blue-500 text-white font-bold">
+                    <button id="start"
+                        class="px-6 py-3 border border-white rounded-sm mr-8 hover:bg-blue-700">Start</button>
+                    <button id="stop"
+                        class="px-6 py-3 border border-white rounded-sm mr-8 hover:bg-blue-700">Stop</button>
+                    <button id="reset"
+                        class="px-6 py-3 border border-white rounded-sm mr-8 hover:bg-blue-700">Reset</button>
+                    <button id="lap"
+                        class="px-6 py-3 border border-white rounded-sm mr-8 hover:bg-blue-700">Lap</button>
+                </div>
+            </div>
+            <div class="font-bold text-3xl mt-5 mb-5">
+                <div id="laps" class=" text-orange-400">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>
